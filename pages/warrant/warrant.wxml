@@ -1,0 +1,18 @@
+<view class='wrap'>
+    <image src='../../images/logo-new.png' class='logo'></image>
+
+    <view class='companyName'>智呼吸</view>
+
+    <view class='line'></view>
+
+    <view class='boldText'>登录后开发者将获得以下权限</view>
+
+    <view class='btn-wrap'>
+        <view class='getUserInfo'>
+            <text>获得你的公开信息（昵称、头像、地区及性别）</text>
+        </view>
+    </view>
+
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">同意并授权</button>
+
+</view>

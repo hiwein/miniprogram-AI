@@ -1,0 +1,128 @@
+<view class='main-wrap'>
+
+    <view class='main-title'>
+        <image src='../../images/xiaozhi.png'></image>
+        <p>欢迎使用小智健康助手</p>
+        <text>每日记录哮喘日记，有助于病情规范化管理</text>
+    </view>
+
+    <view class='main-groups'>
+
+        <form bindsubmit='handleConsultDoctor' report-submit="{{true}}">
+            <button formType="submit" class='main-groups-important' style='margin-right: 17rpx;'>
+                <image src='../../images/consult_doctor_bg.png' class='bg'></image>
+                <view class='main-groups-important-content'>
+                    <image src='../../images/consult.png'></image>
+                    <p>咨询医生</p>
+                    <text>随时咨询医生问题</text>
+                </view>
+            </button>
+        </form>
+
+        <form bindsubmit='handleAiguide' report-submit="{{true}}">
+            <button formType="submit" class='main-groups-important' hover-class="btn-hover">
+                <image src='../../images/consult_assistant.bg.png' class='bg'></image>
+                <view class='main-groups-important-content'>
+                    <image src='../../images/assistant.png'></image>
+                    <p style='color: #f08800;'>小智助手</p>
+                    <text style='color: #f08800;'>科学分析辅助管理</text>
+                </view>
+            </button>
+        </form>
+
+        <view class='clearBoth'></view>
+
+        <view class='main-groups-btns'>
+            <form bindsubmit='handletoDiary' report-submit="{{true}}">
+                <button formType="submit" class='main-groups-btn'>
+                    <view class='main-groups-btn-content'>
+                        <image src='../../images/diary.png'></image>
+                        <text>健康日记</text>
+                    </view>
+                </button>
+            </form>
+
+            <form bindsubmit='handletoDocument' report-submit="{{true}}">
+                <button formType="submit" class='main-groups-btn'>
+                    <view class='main-groups-btn-content'>
+                        <image src='../../images/document.png'></image>
+                        <text>健康档案</text>
+                    </view>
+                </button>
+            </form>
+
+            <form bindsubmit='handletoHealthy' report-submit="{{true}}">
+                <button formType="submit" class='main-groups-btn'>
+                    <view class='main-groups-btn-content'>
+                        <image src='../../images/evaluation.png'></image>
+                        <text>健康测评</text>
+                    </view>
+                </button>
+            </form>
+
+            <form bindsubmit='hanletoDevice' report-submit="{{true}}">
+                <button formType="submit" class='main-groups-btn'>
+                    <view class='main-groups-btn-content'>
+                        <image src='../../images/device.png'></image>
+                        <text>设备连接</text>
+                    </view>
+                </button>
+            </form>
+
+        </view>
+
+    </view>
+
+    <view class='main-recommend'>
+        <image src='../../images/recommend.png'></image>
+        <view class='main-recommend-more' bindtap='handlemoreDoctor'>
+            更多医生
+            <image src='../../images/more.png'></image>
+        </view>
+    </view>
+
+    <view class='main-recommend-block' wx:for="{{ list }}" wx:key="{{ index }}">
+        <view class='head'>
+            <image src="{{ 'https://docapi.hiwein.com/doctor/face/' + item.account }}"></image>
+            <image class='tip' src='../../images/doctor-tip.png'></image>
+        </view>
+        <text class='doctor-name'>{{ item.name }}</text>
+        <view class='doctor-position'>
+            {{ item.technical }}
+        </view>
+        <view class='gotoconsult' data-account='{{ item.account }}' bindtap='handletoDoctorMain'>
+            <view class='content'>
+                去咨询
+            </view>
+        </view>
+        <view class='office'>
+            {{ item.department }}
+        </view>
+        <view class='hospital'>
+            {{ item.hospital }}
+        </view>
+
+        <view class='cando'>
+            <image src='../../images/cando.png'></image>
+            <p>{{ item.skill }}</p>
+        </view>
+
+        <view class='server'>
+            <image src='../../images/server.png' class='serverImg'></image>
+ 
+            <image src='../../images/myDoc-pic.png' class='block' wx:if="{{ item.chat_switch == 2 }}"></image>
+            <image src='../../images/myDoc-picu.png' class='block' wx:else></image>
+
+            <image src='../../images/myDoc-call.png' class='block' wx:if="{{ item.call_switch == 2 }}"></image>
+            <image src='../../images/myDoc-callu.png' class='block' wx:else></image>
+
+            <image src='../../images/myDoc-team.png' class='block' wx:if="{{ item.team_switch == 2 }}"></image>
+            <image src='../../images/myDoc-teamu.png' class='block' wx:else></image>
+
+            <image src='../../images/myDoc-order.png' class='block' wx:if="{{ item.appoint_switch == 2 }}"></image>
+            <image src='../../images/myDoc-orderu.png' class='block' wx:else></image>
+        </view>
+
+    </view>
+
+</view>

@@ -1,0 +1,20 @@
+{
+    "pages": [
+        "pages/entry/entry",
+        "pages/warrant/warrant",
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/webView/webView",
+        "pages/pay/pay"
+    ],
+    "navigateToMiniProgramAppIdList": [
+        "wxde21bcdee4281a69"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#2a8cff",
+        "navigationBarTitleText": "小智健康助手",
+        "navigationBarTextStyle": "white"
+    },
+    "sitemapLocation": "sitemap.json"
+}
